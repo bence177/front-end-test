@@ -1,0 +1,35 @@
+:host{
+    display: block;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+}
+
+/* div.row.checkout{ */
+    /* width: 100%; */
+/* } */
+
+div.checkout-header{
+    background-color: #e3f1ee;
+}
+
+div.header-total{
+    text-align: right;
+    
+}
+
+div.checkout-form{
+    background-color: white;
+}
+
+div.formFooter{
+    text-align: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+button.formSub{
+    width: 90%;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 900;
+}

@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+html, app-root, .container, .list-group, .list-group-item {
+    background-color: lightgray !important;
+}
+.img-fluid{
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+@font-face {
+    font-family: 'montserrat';
+    src: url('assets/font/Montserrat-Regular.ttf') format("truetype");
+}
+
+*{
+    box-sizing: border-box !important;
+    margin: 0;
+    padding: 0;
+    font-family: 'montserrat';
+}

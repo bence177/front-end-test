@@ -1,0 +1,40 @@
+p{
+    text-align: center;
+    font-weight: bold;
+}
+
+p.price{
+    line-height: 60px;
+    font-weight: bolder;
+    font-size: 34px;
+}
+
+div.price-container{
+    border-radius: 50%;
+    background-color: #a1cac5;
+    width: 100px;
+    height: 100px;
+    padding: 20px;
+    margin: 0;
+}
+
+div.item-container{
+    /* margin: 50% 0; */
+    height: 100%;
+    width: 100%;
+}
+
+div.img-container{
+    margin: 0 auto;
+}
+
+img{
+    height: 40vh;
+    margin: auto;
+    display: block;
+}
+
+:host{
+    height: 45vh;
+    display: block;
+}
