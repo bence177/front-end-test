@@ -6,6 +6,7 @@ export const expirationDateValidator: ValidatorFn =
         const year = control.get('expireYear').value;
         const currMonth = new Date().getMonth();
         const currYear = new Date().getFullYear();
+
         if (+year === currYear && +month < currMonth) {
             return { expirationDate: true };
         }

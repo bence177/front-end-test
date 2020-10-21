@@ -17,6 +17,7 @@ export class CheckoutComponent implements OnInit {
   checkoutForm: FormGroup;
   total = 0;
   isPaid = false;
+  orderNumber = '#209456211020';
 
   constructor(private itemsService: ItemsService) { }
 
