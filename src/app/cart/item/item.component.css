@@ -1,12 +1,19 @@
+:host{
+    height: 40vh;
+    display: block;
+}
+
 p{
     text-align: center;
     font-weight: bold;
 }
 
-p.price{
-    line-height: 60px;
-    font-weight: bolder;
-    font-size: 34px;
+div.item-container{
+    margin: 10% 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
 }
 
 div.price-container{
@@ -18,10 +25,10 @@ div.price-container{
     margin: 0;
 }
 
-div.item-container{
-    /* margin: 50% 0; */
-    height: 100%;
-    width: 100%;
+p.price{
+    line-height: 60px;
+    font-weight: bolder;
+    font-size: 34px;
 }
 
 div.img-container{
@@ -29,12 +36,8 @@ div.img-container{
 }
 
 img{
-    height: 40vh;
+    height: 38vh;
     margin: auto;
     display: block;
 }
 
-:host{
-    height: 45vh;
-    display: block;
-}

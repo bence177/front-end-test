@@ -1,35 +1,141 @@
 :host{
     display: block;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    height: 90vh;
 }
 
-/* div.row.checkout{ */
-    /* width: 100%; */
-/* } */
-
-div.checkout-header{
+div.row.checkout-header{
     background-color: #e3f1ee;
 }
 
+
+
 div.header-total{
     text-align: right;
-    
+    font-weight: 900;
+    font-size: 34px;
+    padding-top: 20px;
 }
 
-div.checkout-form{
+div.row.checkout-form{
     background-color: white;
+    padding-top: 20px;
+    color: #9eabad;
+}
+
+div.row.creditNumber{
+    margin-top: 30px;
+}
+
+div.row.expireDate{
+    margin-top: 20px;
+}
+
+div.row.cvv{
+    margin-top: 30px;
+}
+
+div.row.cvv p{
+    margin-top: 8px;
+}
+
+div.row.cvv button.example-btn{
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 div.formFooter{
     text-align: center;
-    align-items: center;
     font-weight: bold;
+    margin: 30px 0 20px 0;
+}
+
+div.row.formFooter div[class*="col-"]{
+    padding: 0;
 }
 
 button.formSub{
-    width: 90%;
+    width: 100%;
     padding: 10px;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 900;
+    background-color: #e8684b;
+    color: white;
+    border: 0;
+}
+
+input, select{
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+/* removing the number field increment, decrement buttons
+    Chrome, Safari, Edge, Opera 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+    Firefox 
+input[type=number] {
+    -moz-appearance: textfield;
+}*/
+
+input, select{
+    height: 50px;
+    font-size: 20px;
+}
+
+input.ng-touched.ng-invalid, select.ng-touched.ng-invalid{
+    border: solid 1px red;
+}
+
+a{
+    text-decoration: underline;
+    color: #9eabad;
+    cursor: pointer;
+}
+
+div.alert{
+    padding: 0;
+}
+
+div.row div.form-group{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.form-control :focus{
+    border-color: #82d4e7 !important;
+}
+
+div.row.oderSuccess{
+    height: 400px;
+    background-color: white;
+}
+
+@media only screen and (max-width: 768px){
+    div.row.checkout-form > div.col-xs-12{
+        margin-left: 8px;
+    }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px){
+    div.checkout-header{
+
+    }
+
+    div.row.checkout-form label,
+    div.row.checkout-form p{
+        font-size: 24px;
+    }
+
+    div.row.checkout-form button{
+        font-size: 28px;
+    }
 }
