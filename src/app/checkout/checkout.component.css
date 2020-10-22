@@ -9,11 +9,17 @@ div.row.checkout-header{
     background-color: #e3f1ee;
 }
 
+div.row.checkout-header
+p.username{
+    font-size: 22px;
+    padding-top: 10px;
+}
+
 div.header-total{
     text-align: right;
     font-weight: 900;
     font-size: 34px;
-    padding-top: 10px;
+    padding-top: 15px;
 }
 
 div.row.checkout-form{
@@ -68,18 +74,6 @@ input, select{
     border-radius: 0px;
 }
 
-/* removing the number field increment, decrement buttons
-    Chrome, Safari, Edge, Opera 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-    Firefox 
-input[type=number] {
-    -moz-appearance: textfield;
-}*/
-
 input, select{
     height: 50px;
     font-size: 20px;
@@ -118,7 +112,6 @@ div.row.order-success
 div.success-header{
     background-color: #e3f1ee;
     text-align: center;
-    vertical-align: middle;
     font-weight: 900;
 }
 
@@ -160,14 +153,32 @@ div.success-body > button{
 
 }
 
-
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 767px){
     div.row.checkout-form > div.col-xs-12{
         margin-left: 8px;
     }
+
+    div.row.order-success{
+        margin-left: 2px;
+    }
+
 }
 
-@media only screen and (min-width: 769px) and (max-width: 1024px){
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+
+    div.row.checkout-header p{
+        font-size: 16px;
+    }
+
+    div.row.checkout-header 
+    p.username{
+        font-size: 20px;
+    }
+
+    div.row.checkout-header 
+    div.header-total p{
+        font-size: 34px;
+    }
 
     div.row.checkout-form label,
     div.row.checkout-form p{
@@ -176,5 +187,26 @@ div.success-body > button{
 
     div.row.checkout-form button{
         font-size: 28px;
+    }
+
+    div.row.order-success 
+    div.success-header h2{
+        font-size: 35px;
+    }
+
+    div.row.order-success
+    div.success-body > div.order-data{
+        font-size: 24px;
+    }
+
+    div.row.order-success
+    div.success-body > button{
+        height: 60px;
+    }
+
+    div.row.order-success
+    div.success-body > button.btn{
+        font-size: 30px;
+        font-weight: 900;
     }
 }

@@ -41,3 +41,13 @@ img{
     display: block;
 }
 
+div.img-container p{
+    font-size: 18px;
+    font-weight: 900;
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px){
+    div.img-container p{
+        font-size: 26px;
+    }
+}
