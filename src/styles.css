@@ -1,10 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
 html, app-root, .container, .list-group, .list-group-item {
     background-color: lightgray !important;
 }
+
 .img-fluid{
-    max-width: 100%;
-    height: auto;
     object-fit: contain;
 }
 
@@ -17,5 +17,18 @@ html, app-root, .container, .list-group, .list-group-item {
     box-sizing: border-box !important;
     margin: 0;
     padding: 0;
-    font-family: 'montserrat';
+    font-family: 'montserrat' !important;
+}
+
+@font-face{
+    font-family: 'Glyphicons Halflings';
+    src: url('node_modules/bootstrap/fonts/glyphicons-halflings-regular.eot');
+    src: url('node_modules/bootstrap/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), 
+    url('node_modules/bootstrap/fonts/glyphicons-halflings-regular.woff') format('woff'), 
+    url('node_modules/bootstrap/fonts/glyphicons-halflings-regular.ttf') format('truetype'), 
+    url('node_modules/bootstrap/fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+}
+
+.glyphicon{
+    font-family: 'Glyphicons Halflings' !important;
 }

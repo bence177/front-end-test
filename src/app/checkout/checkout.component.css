@@ -1,35 +1,212 @@
 :host{
     display: block;
-    margin-top: 10vh;
-    margin-bottom: 10vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    height: 90vh;
 }
 
-/* div.row.checkout{ */
-    /* width: 100%; */
-/* } */
-
-div.checkout-header{
+div.row.checkout-header{
     background-color: #e3f1ee;
+}
+
+div.row.checkout-header
+p.username{
+    font-size: 22px;
+    padding-top: 10px;
 }
 
 div.header-total{
     text-align: right;
-    
+    font-weight: 900;
+    font-size: 34px;
+    padding-top: 15px;
 }
 
-div.checkout-form{
+div.row.checkout-form{
     background-color: white;
+    padding-top: 20px;
+    color: #9eabad;
 }
 
-div.formFooter{
+div.row.creditNumber{
+    margin-top: 30px;
+}
+
+div.row.expireDate{
+    margin-top: 20px;
+}
+
+div.row.cvv{
+    margin-top: 30px;
+}
+
+div.row.cvv p{
+    margin-top: 8px;
+}
+
+div.row.formFooter{
     text-align: center;
-    align-items: center;
     font-weight: bold;
+    margin: 30px 0 20px 0;
+}
+
+div.row.formFooter div[class*="col-"]{
+    padding: 0;
 }
 
 button.formSub{
-    width: 90%;
+    width: 100%;
     padding: 10px;
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 900;
+    background-color: #e8684b;
+    color: white;
+    border: 0;
+}
+
+button.formSub[disabled]{
+    opacity: 0.7;
+}
+
+input, select{
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+input, select{
+    height: 50px;
+    font-size: 20px;
+}
+
+input.ng-touched.ng-invalid, 
+select.ng-touched.ng-invalid{
+    border: solid 1px red;
+}
+
+a{
+    text-decoration: underline;
+    color: #9eabad;
+    cursor: pointer;
+}
+
+div.alert{
+    padding: 0;
+}
+
+div.row 
+div.form-group{
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.form-control:focus{
+    border-color: #82d4e7;
+}
+
+div.row.order-success{
+    display: block;
+}
+
+div.row.order-success 
+div.success-header{
+    background-color: #e3f1ee;
+    text-align: center;
+    font-weight: 900;
+}
+
+div.row.order-success 
+div.success-body{
+    display: block;
+    background-color: white;
+}
+
+div.row.order-success 
+div.success-body > div.success-logo{
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    background-color: #5cb85c;
+    margin: 50px auto;
+    display: flex;
+    align-content: center;
+}
+
+div.row.order-success 
+div.success-body > div.success-logo > span{
+    margin: auto auto;
+    color: white;
+    font-size: 50px;
+}
+
+div.row.order-success
+div.success-body > div.order-data{
+    text-align: center;
+    font-size: 18px;
+}
+
+div.row.order-success
+div.success-body > button{
+    width: 100%;
+    margin: 30px 0;
+
+}
+
+@media only screen and (max-width: 767px){
+    div.row.checkout-form > div.col-xs-12{
+        margin-left: 8px;
+    }
+
+    div.row.order-success{
+        margin-left: 2px;
+    }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+
+    div.row.checkout-header p{
+        font-size: 16px;
+    }
+
+    div.row.checkout-header 
+    p.username{
+        font-size: 20px;
+    }
+
+    div.row.checkout-header 
+    div.header-total p{
+        font-size: 34px;
+    }
+
+    div.row.checkout-form label,
+    div.row.checkout-form p{
+        font-size: 24px;
+    }
+
+    div.row.checkout-form button{
+        font-size: 28px;
+    }
+
+    div.row.order-success 
+    div.success-header h2{
+        font-size: 35px;
+    }
+
+    div.row.order-success
+    div.success-body > div.order-data{
+        font-size: 24px;
+    }
+
+    div.row.order-success
+    div.success-body > button{
+        height: 60px;
+    }
+
+    div.row.order-success
+    div.success-body > button.btn{
+        font-size: 30px;
+        font-weight: 900;
+    }
 }

@@ -1,62 +1,100 @@
-<div class="row checkout">
-    <div class="col-xs-12 checkout-header">
-        <div class="col-xs-5 header-details">
-            <h4>{{ username }}</h4>
-            <p>YOUR TOTAL</p>
-        </div>
-        <div class="col-xs-7 header-total">
-            <p>$88</p>
+<div *ngIf="!isPaid" class="row checkout">
+    <div class="row checkout-header">
+        <div class="col-xs-12">
+            <div class="col-xs-6 header-details">
+                <p class="username"><strong>{{ username }}</strong></p>
+                <p>YOUR TOTAL</p>
+            </div>
+            <div class="col-xs-6 header-total">
+                <p>${{total}}</p>
+            </div>
         </div>
     </div>
-    <div class="col-xs-12 checkout-form">
-        <form (ngSubmit)="onSubmit()" #f="ngForm">
-            <div class="row">
-                <div class="col-xs-12 form-group">
-                    <label for="creditNumber">Credit card number</label>
-                    <input type="number" id="creditNumber" class="form-control">
+    <div class="row checkout-form">
+        <div class="col-xs-12">
+            <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+                <div class="row creditNumber">
+                    <div class="col-xs-12 form-group">
+                        <label for="creditNumber">Credit card number</label>
+                        <input type="text" id="creditNumber" class="form-control" formControlName="creditCardNumber">
+                    </div>
+                    <div *ngIf="!checkoutForm.get('creditCardNumber').valid && checkoutForm.get('creditCardNumber').touched"
+                        class="alert alert-danger">
+                        Please enter a valid credit card number!
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="form-group">
+                <div class="row expireDate">
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <label for="expireMonth">Expiration date</label>
+                        </div>
+                        <div class="col-xs-7 col-lg-7">
+                            <select name="expireMonth" id="expireMonth" class="form-control"
+                                formControlName="expireMonth">
+                                <option value="Month" disabled selected hidden>Month</option>
+                                <option *ngFor="let month of months; let i = index " [value]='i'>{{month}}</option>
+                            </select>
+                        </div>
+                        <div class="col-xs-5 col-lg-5">
+                            <select name="expireYear" id="expireYear" class="form-control" formControlName="expireYear">
+                                <option value="Year" disabled selected hidden>Year</option>
+                                <option *ngFor="let year of years" [value]='year'>{{year}}</option>
+                            </select>
+                        </div>
+                        <div *ngIf="checkoutForm.errors?.expirationDate" class="alert alert-danger">
+                            Please enter a valid expiration date!
+                        </div>
+                    </div>
+                </div>
+                <div class="row cvv">
+                    <div class="form-group">
+                        <div class="col-xs-12">
+                            <label for="cvv">CVV</label>
+                        </div>
+                        <div class="col-xs-5 col-lg-3">
+                            <input type="password" name="cvv" id="cvv" class="form-control" formControlName="cvv">
+                        </div>
+                        <div class="col-xs-7 col-lg-9">
+                            <p>3 or 4 digits - <a
+                                    title="Usually found on the signature strip or the upper right corner of the card number.">view
+                                    example</a>
+                            </p>
+                        </div>
+                        <div *ngIf="!checkoutForm.get('cvv').valid && checkoutForm.get('cvv').touched"
+                            class="alert alert-danger">Please enter a valid CVV or CVC number!</div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row  formFooter">
                     <div class="col-xs-12">
-                        <label for="expireMonth">Expiration date</label>
-                    </div>
-                    <div class="col-xs-7">
-                        <select name="expireMonth" id="expireMonth" class="form-control">
-                            <option>Month</option>
-                        </select>
-                    </div>
-                    <div class="col-xs-5">
-                        <select name="expireYear" id="expireYear" class="form-control">
-                            <option>Year</option>
-                        </select>
+                        <button class="formSub" type="submit" title="Pay and finalize your order">Pay</button>
+                        <!-- [disabled]="!checkoutForm.valid" -->
+                        <br>
+                        <br>
+                        <p><a title="Cancel order and return to the cart">Cancel order</a></p>
                     </div>
                 </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="isPaid" class="row order-success">
+    <div class="row">
+        <div class="col-xs-12 success-header">
+            <h2>Payment successful!</h2>
+        </div>
+        <div class="col-xs-12 success-body">
+            <div class="success-logo">
+                <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
             </div>
-            <div class="row">
-                <div class="form-group">
-                    <div class="col-xs-12">
-                        <label for="cvv">CVV</label>
-                    </div>
-                    <div class="col-xs-5">
-                        <input type="password" name="cvv" id="cvv" class="form-control">
-                    </div>
-                    <div class="col-xs-7">
-                        <p>3 or 4 digits - view example</p>
-                    </div>
-                </div>
+            <div class="order-data">
+                <p>Your order number is: {{ orderNumber }}</p>
+                <br>
+                <p>You will receive a confirmation email shortly with details about your order!</p>
+                <!-- additional information may be placed here to inform the customer -->
             </div>
-            <hr>
-            <div class="row">
-                <div class="col-xs-12 formFooter">
-                    <button class="formSub" type="submit" [disabled]="!f.valid">Pay</button>
-                    <br>
-                    <br>
-                    <a>
-                        <p>Cancel order</p>
-                    </a>
-                </div>
-            </div>
-        </form>
+            <button type="button" class="btn btn-success" title="">OK</button>
+        </div>
     </div>
 </div>
